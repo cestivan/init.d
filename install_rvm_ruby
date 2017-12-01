@@ -20,8 +20,12 @@ ruby -v
 
 if [ MIRROR = '1' ]; then
 gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+echo "gem: --no-document" > ~/.gemrc
+gem update --system
 fi
 
 gem install bundler
+bundle config mirror.https://rubygems.org https://gems.ruby-china.org
 bundle -v
+
 echo "--------------------------- Install Successed -----------------------------"
