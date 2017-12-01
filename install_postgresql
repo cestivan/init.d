@@ -1,0 +1,38 @@
+echo
+echo "--------------------------------------------"
+echo "This script will install PostgreSQL 9.6."
+echo "and create database and user."
+echo "You may be prompted for sudo password."
+echo "--------------------------------------------"
+echo
+
+sudo apt-get install postgresql-9.6
+echo
+echo "You will now set the default password for the postgres user."
+echo "This will open a psql terminal, enter:"
+echo
+echo "\\password postgres"
+echo
+echo "and follow instructions for setting postgres admin password."
+echo "Press Ctrl+D or type \\q to quit psql terminal"
+echo "START psql --------"
+sudo -u postgres psql postgres
+echo "END psql --------"
+echo
+
+read -e -p "Create Database and user? [y/n] " -i "n" createdb
+if [ "$createdb" = "y" ]; then
+  read -e -p "Username: " user
+  sudo -u postgres createuser -D -A -P $user
+  read -e -p "Database name: " db
+  sudo -u postgres createdb -O $user $db
+  echo
+  echo "Remember to update $user-global.properties with the $db database password"
+  echo
+fi
+
+echo
+echo "-----updating /etc/postgresql/9.6/main/pg_hba.conf to allow password authentication----"
+echo "host all all 127.0.0.1/32 password" >> /etc/postgresql/9.6/main/pg_hba.conf
+sudo service postgresql restart
+echo "-------Installed Postgresql--------"
