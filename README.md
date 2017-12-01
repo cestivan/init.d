@@ -10,13 +10,11 @@
 
 Batch scripts for Ruby production environment install on Ubuntu Server.
 
-[![wercker status](https://app.wercker.com/status/2dd2ff58518cae2dd75e4556e6d931c5/s/master "wercker status")](https://app.wercker.com/project/bykey/2dd2ff58518cae2dd75e4556e6d931c5)
-
 ## Requirements
 
 * Ubuntu Server 14.04
 
-## Usage
+## Basic Usage
 
 Install packages first
 
@@ -42,10 +40,24 @@ curl -sSL https://git.io/vbqM8 | bash
 
 > Default Use Ruby China mirror site for RubyGems and Ruby
 
+## Database Installation
+
 ### Install MongoDB
 
 ```bash
 curl -sSL https://git.io/vbqME | bash
+```
+
+### Install MySQL (5.6)
+
+```bash
+curl -sSL https://git.io/vbqQO | bash
+```
+
+### Install PostgreSQL (9.6)
+
+```bash
+curl -sSL https://git.io/vbqQn | bash
 ```
 
 ### Install Redis
@@ -53,6 +65,8 @@ curl -sSL https://git.io/vbqME | bash
 ```bash
 curl -sSL https://git.io/vbqMo | bash
 ```
+
+## Others
 
 ### Install ElasticSearch
 
