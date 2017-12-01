@@ -8,9 +8,7 @@ else
 command source ~/.rvm/scripts/rvm
 fi
 
-if [ MIRROR = '1' ]; then
 echo "ruby_url=https://cache.ruby-china.org/pub/ruby" > ~/.rvm/user/db
-fi
 
 rvm requirements
 rvm install 2.4.2 --disable-binary
@@ -18,11 +16,9 @@ rvm use 2.4.2 --default
 rvm -v
 ruby -v
 
-if [ MIRROR = '1' ]; then
 gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 echo "gem: --no-document" > ~/.gemrc
 gem update --system
-fi
 
 gem install bundler
 bundle config mirror.https://rubygems.org https://gems.ruby-china.org
