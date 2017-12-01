@@ -9,7 +9,7 @@ echo "--------------------------------------------------------------------------
 echo "--------------Installed Ubuntu packages------------------------"
 echo ""
 echo "--------------Installing zh_CN locale------------------------"
-echo "Asia/Beijing" > /etc/timezone
+sudo sh -c "echo 'Asia/Beijing' > /etc/timezone"
 dpkg-reconfigure -f noninteractive tzdata
 
 echo 'export LANG="zh_CN.UTF-8"' >> ~/.profile
