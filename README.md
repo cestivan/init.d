@@ -23,7 +23,7 @@ Install packages first
 ```bash
 sudo apt-get update
 sudo apt-get install -y curl
-curl -sSL https://git.io/vVHhe | bash
+curl -sSL https://git.io/vbq1p | bash
 ```
 
 ### Install Nginx
@@ -31,43 +31,38 @@ curl -sSL https://git.io/vVHhe | bash
 Nginx [official package](http://nginx.org/packages/ubuntu/)
 
 ```bash
-curl -sSL https://git.io/vVHhf | bash
+curl -sSL https://git.io/vbqMG | bash
 ```
 
 ### Install RVM + Ruby
 
 ```bash
-curl -sSL https://git.io/vVHhJ | bash
+curl -sSL https://git.io/vbqM8 | bash
 ```
 
-Use Ruby China mirror site for RubyGems and Ruby:
-
-```
-MIRROR=1 curl -sSL https://git.io/vVHhJ | bash
-```
+> Default Use Ruby China mirror site for RubyGems and Ruby
 
 ### Install MongoDB
 
 ```bash
-curl -sSL https://git.io/vVHhT | bash
+curl -sSL https://git.io/vbqME | bash
 ```
 
 ### Install Redis
 
 ```bash
-curl -sSL https://git.io/vVHhk | bash
+curl -sSL https://git.io/vbqMo | bash
 ```
 
 ### Install ElasticSearch
 
 ```bash
-curl -sSL https://git.io/vVHhm | bash
-sudo service elasticsearch status
+curl -sSL https://git.io/vbqM5 | bash
 ```
 
 ## Install Docker
 
 ```bash
-curl -sSL https://git.io/vPypp | bash
+curl -sSL https://git.io/vbqMj | bash
 sudo docker info
 ```
