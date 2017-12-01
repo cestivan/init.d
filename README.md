@@ -76,6 +76,8 @@ curl -sSL https://git.io/vbqM5 | bash
 
 ## Install Docker
 
+> Will Install `Docker Compose` as well.
+
 ```bash
 curl -sSL https://git.io/vbqMj | bash
 sudo docker info
