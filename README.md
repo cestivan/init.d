@@ -42,10 +42,10 @@ curl -sSL https://git.io/vbqM8 | bash
 
 ## Database Installation
 
-### Install MongoDB
+### Install PostgreSQL (9.6)
 
 ```bash
-curl -sSL https://git.io/vbqME | bash
+curl -sSL https://git.io/vbqQn | bash
 ```
 
 ### Install MySQL (5.6)
@@ -54,10 +54,10 @@ curl -sSL https://git.io/vbqME | bash
 curl -sSL https://git.io/vbqQO | bash
 ```
 
-### Install PostgreSQL (9.6)
+### Install MongoDB
 
 ```bash
-curl -sSL https://git.io/vbqQn | bash
+curl -sSL https://git.io/vbqME | bash
 ```
 
 ### Install Redis
