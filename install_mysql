@@ -10,4 +10,7 @@ sudo mysql_secure_installation
 sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/my.cnf
 mysql -uroot -p -e 'USE mysql; UPDATE `user` SET `Host`="%" WHERE `User`="root" AND `Host`="localhost"; DELETE FROM `user` WHERE `Host` != "%" AND `User`="root"; FLUSH PRIVILEGES;'
 
+echo "Remember to edit /etc/mysql/my.cnf to default use utf8mb4..."
+echo "[mysqld]\ncharacter-set-server=utf8mb4\ncollation-server=utf8mb4_unicode_ci"
+
 sudo service mysql restart
