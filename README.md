@@ -37,7 +37,7 @@ usermod -aG sudo username
 ```bash
 sudo apt-get update
 sudo apt-get install -y curl
-curl -sSL https://git.io/vbq1p | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_packages | bash
 ```
 
 ### 安装 Nginx
@@ -45,13 +45,13 @@ curl -sSL https://git.io/vbq1p | bash
 Nginx [official package](http://nginx.org/packages/ubuntu/)
 
 ```bash
-curl -sSL https://git.io/vbqMG | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_nginx | bash
 ```
 
 ### 安装 RVM + Ruby
 
 ```bash
-curl -sSL https://git.io/vbqM8 | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_rvm_ruby | bash
 ```
 
 > Default Use Ruby China mirror site for RubyGems and Ruby
@@ -61,25 +61,25 @@ curl -sSL https://git.io/vbqM8 | bash
 ### PostgreSQL (9.6)
 
 ```bash
-curl -sSL https://git.io/vbqQn | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_postgresql | bash
 ```
 
 ### MySQL (5.6)
 
 ```bash
-curl -sSL https://git.io/vbqQO | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_mysql | bash
 ```
 
 ### MongoDB
 
 ```bash
-curl -sSL https://git.io/vbqME | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_mongodb | bash
 ```
 
 ### Redis
 
 ```bash
-curl -sSL https://git.io/vbqMo | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_redis | bash
 ```
 
 ## 其他
@@ -87,7 +87,7 @@ curl -sSL https://git.io/vbqMo | bash
 ### ElasticSearch
 
 ```bash
-curl -sSL https://git.io/vbqM5 | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_elasticsearch | bash
 ```
 
 ## Docker
@@ -95,6 +95,6 @@ curl -sSL https://git.io/vbqM5 | bash
 该脚本除了 `Docker` 外还会一同安装 `Docker Compose` 。
 
 ```bash
-curl -sSL https://git.io/vbqMj | bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_docker | bash
 sudo docker info
 ```
