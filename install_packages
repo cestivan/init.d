@@ -18,3 +18,12 @@ locale
 echo "--------------Installed zh_CN locale------------------------"
 echo ""
 echo ""
+echo "--------------Adding 10G Swap Memory------------------------"
+sudo fallocate -l 10G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo sh -c "echo '/swapfile swap swap defaults 0 0' > /etc/fstab"
+sudo free -h
+echo "--------------Added Swap Memory------------------------"
+echo ""
