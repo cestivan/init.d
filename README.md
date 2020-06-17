@@ -139,4 +139,4 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_dokku | bash
 dokku -v
 ```
 
-可以登录 `dokku.xxx.com` 完成剩下工作。
+可以登录 `dokku.xxx.com` 完成剩下工作（如果访问是 nginx 默认页面，记得删掉 `/etc/nginx/conf.d/default.conf` 后 `nginx -s reload`）。
