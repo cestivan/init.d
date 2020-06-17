@@ -12,22 +12,22 @@ Batch scripts for Ruby production environment install on Ubuntu Server.
 
 ## 系统要求
 
-* Ubuntu Server 14.04, 16.04
+* Ubuntu Server 14.04, 16.04, 18.04
 
 ## 前提
 
-大多数情况下，服务器部署不应用`root`账户直接进行操作，所以如果你的服务器本身未创建非root账户（如`ubuntu`），你应该先创建一个非root账户。
+大多数情况下，服务器部署不应用 `root` 账户直接进行操作，所以如果你的服务器本身未创建非 root 账户（如 `yxprod`），你应该先创建一个非 root 账户。
 
-> 注意将`ubuntu`替换成你希望创建的用户名。
+> 注意将 `yxprod` 替换成你希望创建的用户名。
 
 ```bash
-adduser ubuntu
+adduser yxprod
 ```
 
 输入密码，确认密码后，一路回车即可创建成功。接下来，再将该账户设为sudo用户组，让它可以进行高级操作。
 
 ```bash
-usermod -aG sudo username
+usermod -aG sudo yxprod
 ```
 
 ## 系统标配
@@ -38,6 +38,35 @@ usermod -aG sudo username
 sudo apt-get update
 sudo apt-get install -y curl
 curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_packages | bash
+```
+
+## 提高 ssh 安全性
+
+### 修改 ssh 配置文件
+
+用 root 账号修改端口号（默认为 2345 端口，**注意要在云服务器安全组放行**）并禁用密码登陆：
+
+```bash
+sed -i 's/^.*Port.*/Port 2345/g' /etc/ssh/sshd_config && sed -i 's/^.*PasswordAuthentication.*/PasswordAuthentication no/g' /etc/ssh/sshd_config
+```
+
+防火墙放行 2345 端口：
+
+```bash
+ufw allow 2345/tcp
+```
+
+### 重启ssh服务
+使用如下命令重启ssh服务即可使用root账号和新的端口号登录ssh：
+
+```bash
+service ssh restart
+```
+
+可以通过以上命令可以通过：
+
+```bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/ssh_security | bash
 ```
 
 ### 安装 Nginx
@@ -84,13 +113,13 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_redis | bash
 
 ## 其他
 
-### ElasticSearch
+### 安装 ElasticSearch
 
 ```bash
 curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_elasticsearch | bash
 ```
 
-## Docker
+## 安装 Docker
 
 该脚本除了 `Docker` 外还会一同安装 `Docker Compose` 。
 
@@ -98,3 +127,16 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_elasticsearch |
 curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_docker | bash
 sudo docker info
 ```
+
+### 安装 Dokku
+
+提前映射 `dokku.xxx.com` 和 `*.dokku.xxx.com` 两个 A 记录到指定服务器 IP。
+
+在执行以下命令安装 Dokku 需要先 `su root` 切换到 root 用户。
+
+```bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_dokku | bash
+dokku -v
+```
+
+可以登录 `dokku.xxx.com` 完成剩下工作。
