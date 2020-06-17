@@ -140,3 +140,12 @@ dokku -v
 ```
 
 可以登录 `dokku.xxx.com` 完成剩下工作（如果访问是 nginx 默认页面，记得删掉 `/etc/nginx/conf.d/default.conf` 后 `nginx -s reload`）。
+
+常见插件：
+
+```bash
+dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres
+dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+dokku plugin:install https://github.com/dokku/dokku-mysql.git mysql
+dokku plugin:install https://github.com/dokku/dokku-redis.git redis
+```
