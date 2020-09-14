@@ -18,8 +18,8 @@ locale
 echo "--------------Installed zh_CN locale------------------------"
 echo ""
 echo ""
-echo "--------------Adding 10G Swap Memory------------------------"
-sudo fallocate -l 10G /swapfile
+echo "--------------Adding 1G Swap Memory------------------------"
+sudo fallocate -l 1G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
