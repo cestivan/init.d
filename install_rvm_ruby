@@ -16,8 +16,8 @@ fi
 echo "ruby_url=https://cache.ruby-china.org/pub/ruby" > ~/.rvm/user/db
 
 rvm requirements
-rvm install 2.4.2 --disable-binary
-rvm use 2.4.2 --default
+rvm install 3.0.0 --disable-binary
+rvm use 3.0.0 --default
 rvm -v
 ruby -v
 
