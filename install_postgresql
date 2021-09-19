@@ -6,7 +6,18 @@ echo "You may be prompted for sudo password."
 echo "--------------------------------------------"
 echo
 
-sudo apt-get install postgresql-9.6
+echo "Adding the APT repository required to pull the packages form the PostgreSQL repository"
+sudo apt -y install vim bash-completion wget
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+echo "Updating sources.list"
+echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+
+echo "Installing the postgresql"
+sudo apt-get install postgresql-13 postgresql-client-13
+
+sudo apt update
+
 echo
 echo "You will now set the default password for the postgres user."
 echo "This will open a psql terminal, enter:"
@@ -32,7 +43,7 @@ if [ "$createdb" = "y" ]; then
 fi
 
 echo
-echo "-----updating /etc/postgresql/9.6/main/pg_hba.conf to allow password authentication----"
-echo "host all all 127.0.0.1/32 password" >> /etc/postgresql/9.6/main/pg_hba.conf
+echo "-----updating /etc/postgresql/13/main/pg_hba.conf to allow password authentication----"
+echo "host all all 127.0.0.1/32 password" >> /etc/postgresql/13/main/pg_hba.conf
 sudo service postgresql restart
 echo "-------Installed Postgresql--------"

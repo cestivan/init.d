@@ -87,7 +87,7 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_rvm_ruby | bash
 
 ## 安装数据库
 
-### PostgreSQL (9.6)
+### PostgreSQL (13)
 
 ```bash
 curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_postgresql | bash
