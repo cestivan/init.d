@@ -18,14 +18,14 @@ echo "Environments successfully set!"
 echo "Downloading docker-compose files..."
 
 curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml > traefik.yml
-curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent-stack.yml > portainer-agent-stack.yml
+curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer.yml > portainer.yml
 
 echo "Deploying traefik..."
 docker network create traefik -d host --scope swarm
 docker stack deploy -c traefik.yml traefik
 
 echo "Deploying portainer..."
-docker stack deploy -c portainer-agent-stack.yml portainer
+docker stack deploy -c portainer.yml portainer
 
 docker ps
 
