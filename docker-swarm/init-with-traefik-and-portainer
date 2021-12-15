@@ -1,6 +1,10 @@
-curl -O https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/env.sh
-curl -O https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml
-curl -O https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent-stack.yml
+echo "Downloading files..."
+
+curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/env.sh > env.sh
+curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml > traefik.yml
+curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent-stack.yml > portainer-agent-stack.yml
+
+chmod +x env.sh
 
 exec ./env.sh
 
