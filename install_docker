@@ -24,6 +24,7 @@ sudo curl -L "https://github.com.cnpmjs.org/docker/compose/releases/download/2.2
 
 echo 'add executable privileges to docker compose bin file'
 sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 echo 'Adding current user to docker group'
 sudo usermod -aG docker $USER

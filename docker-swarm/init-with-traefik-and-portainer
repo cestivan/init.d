@@ -22,7 +22,11 @@ curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer.yml >
 
 echo "Deploying traefik..."
 docker network create traefik -d overlay --scope swarm
+
+echo "creating acme.json for traefik to save https certs"
 touch acme.json
+chmod 600 acme.json
+
 docker stack deploy -c traefik.yml traefik
 
 echo "Deploying portainer..."
