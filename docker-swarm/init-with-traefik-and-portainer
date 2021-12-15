@@ -1,7 +1,11 @@
+curl -O https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/env.sh
+curl -O https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml
+curl -O https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent-stack.yml
+
 exec ./env.sh
 
 echo "Deploying traefik..."
-docker stack deploy traefik --compose-file traefik.yml
+docker stack deploy -c traefik.yml traefik
 
 echo "Deploying portainer..."
 docker stack deploy -c portainer-agent-stack.yml portainer
