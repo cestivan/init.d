@@ -7,7 +7,7 @@ read -p "USERNAME: " username
 read -p "PASSWORD: " password
 
 export EMAIL=$email
-export WILD_DOMAIN=$wild_domain
+export DOMAIN=$wild_domain
 export USERNAME=$username
 export PASSWORD=$password
 export HASHED_PASSWORD=$(openssl passwd -apr1 $PASSWORD)
