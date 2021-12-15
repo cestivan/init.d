@@ -1,0 +1,7 @@
+exec ./env.sh
+
+echo "Deploying traefik..."
+docker stack deploy traefik --compose-file traefik.yml
+
+echo "Deploying portainer..."
+docker stack deploy -c portainer-agent-stack.yml portainer
