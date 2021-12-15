@@ -1,15 +1,21 @@
 echo "Downloading files..."
 
+curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/init-with-traefik-and-portainer > init-with-traefik-and-portainer
 curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/env.sh > env.sh
 curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml > traefik.yml
 curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent-stack.yml > portainer-agent-stack.yml
 
 chmod +x env.sh
 
-exec ./env.sh
+exec source ./env.sh
 
 echo "Deploying traefik..."
 docker stack deploy -c traefik.yml traefik
 
 echo "Deploying portainer..."
 docker stack deploy -c portainer-agent-stack.yml portainer
+
+docker ps
+
+echo "If you could see docker containers running now, they were successfully deployed!"
+echo "Re-exec this script by running 'bash init-with-traefik-and-portainer'"

@@ -128,6 +128,12 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_docker | bash
 sudo docker info
 ```
 
+以 docker swarm 模式，一键安装并启动 `traefik` 及 `Portainer`：
+
+```bash
+curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/init-with-traefik-and-portainer | bash
+```
+
 ### 安装 Dokku
 
 提前映射 `dokku.xxx.com` 和 `*.dokku.xxx.com` 两个 A 记录到指定服务器 IP。
