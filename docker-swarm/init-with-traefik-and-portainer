@@ -7,7 +7,7 @@ curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent
 
 chmod +x env.sh
 
-exec source ./env.sh
+source ./env.sh
 
 echo "Deploying traefik..."
 docker stack deploy -c traefik.yml traefik
