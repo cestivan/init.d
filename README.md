@@ -131,6 +131,11 @@ sudo docker info
 以 docker swarm 模式，一键安装并启动 `traefik` 及 `Portainer`：
 
 ```bash
+curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/env.sh > env.sh
+source env.sh
+```
+
+```bash
 curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/init-with-traefik-and-portainer | bash
 ```
 
