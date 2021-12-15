@@ -21,6 +21,7 @@ curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml > t
 curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer-agent-stack.yml > portainer-agent-stack.yml
 
 echo "Deploying traefik..."
+docker network create traefik
 docker stack deploy -c traefik.yml traefik
 
 echo "Deploying portainer..."

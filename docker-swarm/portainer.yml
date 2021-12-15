@@ -20,7 +20,7 @@ services:
       - portainer_data:/data
     networks:
       - agent_network
-      - traefik-public
+      - traefik
     deploy:
       mode: replicated
       replicas: 1
@@ -28,7 +28,7 @@ services:
         constraints: [node.role == manager]
       labels:
         - traefik.enable=true
-        - traefik.docker.network=traefik-public
+        - traefik.docker.network=traefik
         - traefik.http.routers.portainer.rule=Host(`por.${DOMAIN?Variable DOMAIN not set}`)
         - traefik.http.routers.portainer.tls
         - traefik.http.routers.portainer.tls.certresolver=myresolver
@@ -40,7 +40,7 @@ networks:
   agent_network:
     driver: overlay
     attachable: true
-  traefik-public:
+  traefik:
     external: true
 
 volumes:
