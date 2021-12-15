@@ -21,7 +21,8 @@ curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml > t
 curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer.yml > portainer.yml
 
 echo "Deploying traefik..."
-docker network create traefik -d host --scope swarm
+docker network create traefik -d overlay --scope swarm
+touch acme.json
 docker stack deploy -c traefik.yml traefik
 
 echo "Deploying portainer..."
