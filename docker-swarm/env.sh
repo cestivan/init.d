@@ -4,7 +4,7 @@ echo "Enter environments for traefik and portainer"
 read -p "EMAIL: " email
 read -p "WILD_DOMAIN: " wild_domain
 read -p "USERNAME: " username
-read -s -p "PASSWORD: " password
+read -s "PASSWORD: " password
 
 export EMAIL=$email
 export WILD_DOMAIN=$wild_domain
