@@ -20,7 +20,7 @@ sudo apt-get -y install docker-ce docker-ce-cli
 echo "Installing Docker Compose"
 
 echo 'Downloading Docker Compose'
-sudo curl -L "https://github.com.cnpmjs.org/docker/compose/releases/download/2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://hub.fastgit.org/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 echo 'add executable privileges to docker compose bin file'
 sudo chmod +x /usr/local/bin/docker-compose
