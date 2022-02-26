@@ -1,3 +1,15 @@
+#!/bin/bash
+set -e
+
+echo "if you need to change HOSTNAME, please enter or you can skip"
+read -r NEW_HOSTNAME
+if [ -z "$NEW_HOSTNAME" ]
+then
+      echo "skipped"
+else
+      sudo sh -c "echo $NEW_HOSTNAME > /etc/hostname"
+fi
+
 echo "--------------Installing Ubuntu packages...----------------------"
 sudo apt-get update
 echo "----updating nodejs repo source------"
