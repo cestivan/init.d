@@ -44,10 +44,16 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_packages | bash
 
 ### 修改 ssh 配置文件
 
-用 root 账号修改端口号（默认为 2345 端口，**注意要在云服务器安全组放行**）并禁用密码登陆：
+用 root 账号修改端口号（默认为 2345 端口，**注意要在云服务器安全组放行**）：
 
 ```bash
-sed -i 's/^.*Port.*/Port 2345/g' /etc/ssh/sshd_config && sed -i 's/^.*PasswordAuthentication.*/PasswordAuthentication no/g' /etc/ssh/sshd_config
+sed -i 's/^.*Port.*/Port 2345/g' /etc/ssh/sshd_config
+```
+
+禁用密码登陆：
+
+```bash
+sed -i 's/^.*PasswordAuthentication.*/PasswordAuthentication no/g' /etc/ssh/sshd_config
 ```
 
 防火墙放行 2345 端口：
