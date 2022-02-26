@@ -3,7 +3,7 @@ sudo apt-get update
 echo "----updating nodejs repo source------"
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 echo ""
-sudo apt-get install -y software-properties-common build-essential ssh openssl libreadline6 libreadline6-dev libsqlite3-dev libmysqlclient-dev libpq-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake cmake libtool imagemagick libmagickwand-dev libpcre3-dev language-pack-zh-hans libevent-dev libgmp-dev libgmp3-dev redis-tools git-core wget unzip vim nodejs zsh htop
+sudo apt-get install -y openssl language-pack-zh-hans git-core wget vim zsh
 echo "---------------------------------------------------------------------------"
 echo "--------------Installed Ubuntu packages------------------------"
 echo ""
