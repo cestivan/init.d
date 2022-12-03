@@ -17,8 +17,8 @@ echo "Environments successfully set!"
 
 echo "Downloading docker-compose files..."
 
-curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/traefik.yml > traefik.yml
-curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/portainer.yml > portainer.yml
+curl https://git.yingxuan.co/yx/init-d/-/raw/master/docker-swarm/traefik.yml > traefik.yml
+curl https://git.yingxuan.co/yx/init-d/-/raw/master/docker-swarm/portainer.yml > portainer.yml
 
 echo "Deploying traefik..."
 docker network create traefik -d overlay --scope swarm
