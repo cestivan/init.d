@@ -37,7 +37,7 @@ usermod -aG sudo yxprod
 ```bash
 sudo apt-get update
 sudo apt-get install -y curl
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_packages | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_packages | bash
 ```
 
 ## 提高 ssh 安全性
@@ -72,7 +72,7 @@ service ssh restart
 可以通过以上命令可以通过：
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/ssh_security | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/ssh_security | bash
 ```
 
 ### 安装 Nginx
@@ -80,13 +80,13 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/ssh_security | bash
 Nginx [official package](http://nginx.org/packages/ubuntu/)
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_nginx | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_nginx | bash
 ```
 
 ### 安装 RVM + Ruby
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_rvm_ruby | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_rvm_ruby | bash
 ```
 
 > Default Use Ruby China mirror site for RubyGems and Ruby
@@ -96,25 +96,25 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_rvm_ruby | bash
 ### PostgreSQL (13)
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_postgresql | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_postgresql | bash
 ```
 
 ### MySQL (5.6)
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_mysql | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_mysql | bash
 ```
 
 ### MongoDB
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_mongodb | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_mongodb | bash
 ```
 
 ### Redis
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_redis | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_redis | bash
 ```
 
 ## 其他
@@ -122,7 +122,7 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_redis | bash
 ### 安装 ElasticSearch
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_elasticsearch | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_elasticsearch | bash
 ```
 
 ## 安装 Docker
@@ -130,14 +130,16 @@ curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_elasticsearch |
 该脚本除了 `Docker` 外还会一同安装 `Docker Compose` 。
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_docker | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_docker | bash
 sudo docker info
 ```
 
 以 docker swarm 模式，一键安装并启动 `traefik` 及 `Portainer`：
 
 ```bash
-curl https://git.yingxuan.io/yx/init-d/-/raw/master/docker-swarm/init-with-traefik-and-portainer > init-with-traefik-and-portainer
+docker swarm init
+
+curl https://git.yingxuan.co/yx/init-d/-/raw/master/docker-swarm/init-with-traefik-and-portainer > init-with-traefik-and-portainer
 source init-with-traefik-and-portainer
 ```
 
@@ -148,7 +150,7 @@ source init-with-traefik-and-portainer
 在执行以下命令安装 Dokku 需要先 `su root` 切换到 root 用户。
 
 ```bash
-curl -sSL https://git.yingxuan.io/yx/init-d/-/raw/master/install_dokku | bash
+curl -sSL https://git.yingxuan.co/yx/init-d/-/raw/master/install_dokku | bash
 dokku -v
 ```
 
