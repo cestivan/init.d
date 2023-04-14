@@ -5,7 +5,6 @@ read -r NEW_HOSTNAME
 if [ -n $NEW_HOSTNAME ]
 then
   sudo sh -c "echo $NEW_HOSTNAME > /etc/hostname"
-  sudo hostname "$new_hostname"
 else
   echo "Hostname skipped"
 fi
