@@ -2,8 +2,7 @@
 
 echo "Please enter a new hostname (or press Enter to skip):"
 read -r NEW_HOSTNAME
-if [ -n $NEW_HOSTNAME ]
-then
+if [ -n $NEW_HOSTNAME ]; then
   sudo sh -c "echo $NEW_HOSTNAME > /etc/hostname"
 else
   echo "Hostname skipped"
