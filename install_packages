@@ -1,13 +1,13 @@
 #!/bin/bash
-set -e
 
-echo "if you need to change HOSTNAME, please enter or you can skip"
+echo "Please enter a new hostname (or press Enter to skip):"
 read -r NEW_HOSTNAME
-if [ -z "$NEW_HOSTNAME" ]
-then
-      echo "skipped"
+if [ -n $NEW_HOSTNAME ]; then
+  sudo sh -c "echo $NEW_HOSTNAME > /etc/hostname"
+  sudo hostname "$new_hostname"
+  echo "Hostname set to $new_hostname"
 else
-      sudo sh -c "echo $NEW_HOSTNAME > /etc/hostname"
+  echo "Hostname skipped"
 fi
 
 echo "--------------Installing Ubuntu packages...----------------------"
