@@ -127,14 +127,14 @@ curl -sSL https://jihulab.com/ivanlee/init.d/-/raw/master/install_elasticsearch 
 
 ## 安装 Docker
 
-该脚本除了 `Docker` 外还会一同安装 `Docker Compose` 。
-
 ```bash
 curl -sSL https://jihulab.com/ivanlee/init.d/-/raw/master/install_docker | bash
 sudo docker info
 ```
 
-以 docker swarm 模式，一键安装并启动 `traefik` 及 `Portainer`：
+### docker swarm 模式
+
+一键安装并启动 `traefik` 及 `Portainer`：
 
 ```bash
 docker swarm init
@@ -150,8 +150,15 @@ source init-with-traefik-and-portainer
 在执行以下命令安装 Dokku 需要先 `su root` 切换到 root 用户。
 
 ```bash
-curl -sSL https://jihulab.com/ivanlee/init.d/-/raw/master/install_dokku | bash
-dokku -v
+$ curl -sSL https://jihulab.com/ivanlee/init.d/-/raw/master/install_dokku | bash
+# Configure your server domain
+
+$ dokku domains:set-global dokku.xxx.com
+
+# and your ssh key to the dokku user
+
+$ PUBLIC_KEY="your-public-key-contents-here"
+$ echo "$PUBLIC_KEY" | dokku ssh-keys:add admin
 ```
 
 可以登录 `dokku.xxx.com` 完成剩下工作（如果访问是 nginx 默认页面，记得删掉 `/etc/nginx/conf.d/default.conf` 后 `nginx -s reload`）。

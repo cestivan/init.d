@@ -1,8 +1,3 @@
-wget -nv -O - https://packagecloud.io/dokku/dokku/gpgkey | apt-key add -
-export SOURCE="https://packagecloud.io/dokku/dokku/ubuntu/"
-export OS_ID="$(lsb_release -cs 2>/dev/null || echo "bionic")"
-echo "xenial bionic focal" | grep -q "$OS_ID" || OS_ID="bionic"
-echo "deb $SOURCE $OS_ID main" | tee /etc/apt/sources.list.d/dokku.list
-apt-get update
-apt-get install -y dokku
+wget -NP . https://dokku.com/bootstrap.sh
+sudo bash bootstrap.sh
 dokku plugin:install-dependencies --core

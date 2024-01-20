@@ -22,11 +22,4 @@ sudo usermod -aG docker $USER
 
 sudo service docker restart
 
-echo "Installing Docker Compose"
-
-echo 'Downloading Docker Compose'
-sudo curl -L "https://github.91chi.fun/https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-echo 'add executable privileges to docker compose bin file'
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+curl -fsSL https://jihulab.com/ivanlee/init.d/-/raw/master/clean-docker-logs.sh > clean-docker-logs.sh
